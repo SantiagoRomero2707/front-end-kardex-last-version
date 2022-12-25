@@ -1,12 +1,16 @@
 import { NgModule } from '@angular/core';
+import { MaterialModule } from './material.module';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './auth/login.component';
-import { RegistroComponent } from './auth/registro.component';
 import { MenuComponent } from './menu/menu.component';
+import { LoginComponent } from './auth/login.component';
+import { AppRoutingModule } from './app-routing.module';
 import { IndexComponent } from './index/index.component';
+import { RegistroComponent } from './auth/registro.component';
+
+
 
 @NgModule({
   declarations: [
@@ -18,6 +22,8 @@ import { IndexComponent } from './index/index.component';
   ],
   imports: [
     BrowserModule,
+    MaterialModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],

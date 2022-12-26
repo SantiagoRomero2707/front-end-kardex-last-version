@@ -1,7 +1,12 @@
 import { NgModule } from '@angular/core';
+import { ToastrModule } from 'ngx-toastr';
+import { FormsModule } from '@angular/forms';
 import { MaterialModule } from './material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -22,9 +27,11 @@ import { RegistroComponent } from './auth/registro.component';
   ],
   imports: [
     BrowserModule,
-    MaterialModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     HttpClientModule,
-    AppRoutingModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

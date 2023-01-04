@@ -1,0 +1,51 @@
+<app-menu></app-menu>
+<ul>
+    <li>
+        <form #f="ngForm" (ngSubmit)="onRegistrarProducto()" novalidate>
+            <button class="btn btn-outline-success btn-block">
+                <i class="fa-solid fa-calculator"></i> Registrar productos
+            </button>
+        </form>
+        <br>
+    </li>
+    <li>
+        <form #f="ngForm" (ngSubmit)="onEditarProducto()" novalidate>
+            <button class="btn btn-outline-success btn-block">
+                <i class="fa-solid fa-calculator"></i> Editar productos
+            </button>
+        </form>
+        <br>
+    </li>
+    <li>
+        <form #f="ngForm" (ngSubmit)="onEliminarProducto()" novalidate>
+            <button class="btn btn-outline-success btn-block">
+                <i class="fa-solid fa-calculator"></i> Eliminar productos
+            </button>
+        </form>
+        <br>
+    </li>
+    <li>
+        <br>
+        <label>Consultar productos</label>
+        <br>
+        <ul>
+            <li>
+                <form #f="ngForm" (ngSubmit)="onConsultarProductos()" novalidate>
+                    <button class="btn btn-outline-success btn-block">
+                        <i class="fa-solid fa-calculator"></i> Consultar lista de productos
+                    </button>
+                </form>
+                <br>
+            </li>
+            <li>
+                <form #f="ngForm" (ngSubmit)="onConsultarProducto()" novalidate>
+                    <button class="btn btn-outline-success btn-block">
+                        <i class="fa-solid fa-calculator"></i> Consultar un producto
+                    </button>
+                </form>
+                <br>
+            </li>
+            
+        </ul>  
+    </li>
+</ul>

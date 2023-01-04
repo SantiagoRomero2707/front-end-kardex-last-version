@@ -8,13 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
   isLogged = false;
+  nombreUsuario = '';
   constructor(private tokenService: TokenService) { }
 
   ngOnInit(): void {
     if(this.tokenService.getToken()){
       this.isLogged= true;
+      this.nombreUsuario = this.tokenService.getUserName();
     }else{
       this.isLogged=false;
+      this.nombreUsuario = '';
     }
   }
 

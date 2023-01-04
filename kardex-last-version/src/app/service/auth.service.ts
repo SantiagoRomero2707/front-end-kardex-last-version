@@ -1,6 +1,7 @@
-import { JwtDto } from './../models/jwt-dto';
-import { NuevoUsuario } from '../models/nuevo-usuario';
-import { LoginUsuario } from './../models/login-usuario';
+import { LoginUsuario } from './../models/auth/login-usuario';
+import { NuevoUsuario } from '../models/auth/nuevo-usuario';
+import { JwtDto } from '../models/auth/jwt-dto';
+
 
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';

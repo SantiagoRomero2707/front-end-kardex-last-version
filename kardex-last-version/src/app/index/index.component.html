@@ -1,5 +1,38 @@
 <app-menu></app-menu>
 <div class="container text-center">
-    <div *ngIf="isLogged; else loggedOut"><h2>Bienvenido {{nombreUsuario}}</h2></div>
+    <div *ngIf="isLogged; else loggedOut">
+        <h2>Bienvenido {{nombreUsuario}}</h2>
+        <hr>
+        <div class="card-group">   
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Modulo de Kardex</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <form #f="ngForm" (ngSubmit)="onKardex()" novalidate>
+                        <button class="btn btn-outline-success btn-block">
+                            <i class="fa-solid fa-calculator"></i> Kardex
+                        </button>
+                    </form>
+                    <hr>
+                    <img class="card-img-top" width="100px" height="250px" src="assets\images\menu-principal\card-kardex.jpg" alt="Card image cap">
+                </div>
+            </div>
+
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Modulo de Producto</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <form #f="ngForm" (ngSubmit)="onProduct()" novalidate>
+                        <button class="btn btn-outline-success btn-block" routerLink="/">
+                            <i class="fa-solid fa-cart-shopping"></i> Productos
+                        </button>
+                    </form>
+                    
+                    <hr>
+                    <img class="card-img-top" width="100px" height="250px" src="assets\images\menu-principal\card-product.jpg" alt="Card image cap">
+                </div>   
+            </div>
+        </div>
+    </div>
     <ng-template #loggedOut>No has iniciado sesión</ng-template>
 </div>

@@ -1,4 +1,4 @@
-import { LoginUsuario } from './../models/login-usuario';
+import { LoginUsuario } from './../models/auth/login-usuario';
 import { TokenService } from '../service/token.service';
 import { AuthService } from './../service/auth.service';
 import { Component, OnInit } from '@angular/core';
@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
         this.tokenService.setUserName(data.nombreUsuario);
         this.tokenService.setAuthorities(data.authorities);
         this.roles = data.authorities;
-        this.toastr.success('Bienvenido ' + data.nombreUsuario, 'OK', {
+        this.toastr.success('Bienvenido ' + data.nombreUsuario, 'Ingreso correcto ', {
           timeOut: 3000, positionClass: 'toast-top-center'
         });
         this.router.navigate(['/']);

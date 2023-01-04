@@ -1,0 +1,46 @@
+<app-menu></app-menu>
+<div class="container d-flex justify-content-center" div *ngIf="isLogged; else loggedOut">
+  <div class="card">
+      <div class="card-header">
+        <ul class="nav nav-tabs">
+          <a class="nav-link active" routerLink="/login">Nuevo Producto</a>
+        </ul>
+      </div>
+
+    <div class="card-body">
+      <form #f="ngForm" [formGroup]="form" (ngSubmit)="onEditProduct()" novalidate>
+        <div class="form-group">
+          <label for="nombreUsuario">Nombre Producto</label>
+          <input class="form-control" id="validationCustom01" placeholder="Nombre Producto" 
+                formControlName="nombreProducto" type="text" name="lname" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Precio Unitario</label>
+          <input class="form-control" id="validationCustom02" placeholder="Precio Unitario" 
+                formControlName="precioUnitario" type="text" name="lname" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Nit Producto</label>
+          <input class="form-control" id="validationCustom03" placeholder="NIT Producto" 
+                formControlName="nitProducto" type="text" name="lname" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Proveedor</label>
+          <input class="form-control" id="validationCustom04" placeholder="Proveedor" 
+                formControlName="proveedor" type="text" name="lname" required>
+        </div>
+        <br>
+
+        <div class="form-group">
+          <button class="btn btn-outline-success btn-block">
+            <i class="fas fa-sign-in-alt"></i> Registrar
+          </button>
+        </div>
+      </form>
+    </div>    
+  </div>    
+</div>
+<ng-template  #loggedOut></ng-template>

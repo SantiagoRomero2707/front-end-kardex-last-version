@@ -1,6 +1,11 @@
+import { ListProductComponent } from './crud/product/list-product/list-product.component';
+import { DeleteProductComponent } from './crud/product/delete-product/delete-product.component';
+import { EditProductComponent } from './crud/product/edit-product/edit-product.component';
+import { MenuProductComponent } from './crud/product/menu-product/menu-product.component';
 import { NgModule } from '@angular/core';
 import { ToastrModule } from 'ngx-toastr';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 import { MaterialModule } from './material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
@@ -10,32 +15,39 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { AppComponent } from './app.component';
-import { MenuComponent } from './navigation/menu.component';
 import { LoginComponent } from './auth/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { IndexComponent } from './index/index.component';
+import { MenuComponent } from './navigation/menu.component';
 import { RegistroComponent } from './auth/registro.component';
-
+import { NewProductComponent } from './crud/product/new-product/new-product.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    MenuComponent,
+    IndexComponent, 
     LoginComponent,
     RegistroComponent,
-    MenuComponent,
-    IndexComponent
+    NewProductComponent,
+    MenuProductComponent,
+    EditProductComponent,
+    DeleteProductComponent,
+    ListProductComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
-    AppRoutingModule,
     MaterialModule,
-    BrowserAnimationsModule,
-    ToastrModule.forRoot(),
+    AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    ReactiveFormsModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule,
   ],
   providers: [interceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

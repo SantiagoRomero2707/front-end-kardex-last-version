@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TokenService } from '../service/token.service';
 
 @Component({
@@ -11,7 +12,8 @@ export class IndexComponent implements OnInit {
   isLogged = false;
   nombreUsuario = '';
 
-  constructor(private tokenService: TokenService) { }
+
+  constructor(private tokenService: TokenService, private router: Router) { }
 
   ngOnInit(): void {
     if(this.tokenService.getToken()){
@@ -21,6 +23,14 @@ export class IndexComponent implements OnInit {
       this.isLogged = false;
       this.nombreUsuario = '';
     }
+  }
+
+  onKardex(): void{
+    this.router.navigate(['/register']);
+  }
+
+  onProduct(): void{
+    this.router.navigate(['/product/menu']);
   }
 
 }

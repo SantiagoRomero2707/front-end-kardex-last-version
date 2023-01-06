@@ -19,7 +19,7 @@ export class MenuProductComponent {
   }
 
   onEditarProducto():void{
-    this.router.navigate(['/product/edit']);
+    this.router.navigate(['/product/update']);
   }
 
   onEliminarProducto():void{
@@ -31,7 +31,7 @@ export class MenuProductComponent {
   }
 
   onConsultarProducto():void{
-    this.router.navigate(['/product/inquire']);
+    this.router.navigate(['/product/inquire/detail']);
   }
 
 }

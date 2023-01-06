@@ -1,46 +1,81 @@
 <app-menu></app-menu>
-<div class="container d-flex justify-content-center" div *ngIf="isLogged; else loggedOut">
-  <div class="card">
-      <div class="card-header">
-        <ul class="nav nav-tabs">
-          <a class="nav-link active" routerLink="/login">Nuevo Producto</a>
-        </ul>
-      </div>
+<div class="container" *ngIf="product">
+  <div class="row mt-5">
+    <div class="col-md-4 mx-auto">
 
-    <div class="card-body">
-      <form #f="ngForm" [formGroup]="form" (ngSubmit)="onEditProduct()" novalidate>
+      <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+
         <div class="form-group">
-          <label for="nombreUsuario">Nombre Producto</label>
-          <input class="form-control" id="validationCustom01" placeholder="Nombre Producto" 
-                formControlName="nombreProducto" type="text" name="lname" required>
+          <label for="idProducto">Id producto</label>
+          <input
+            type="number"
+            class="form-control"
+            id="idProducto"
+            name="idProducto"
+            [(ngModel)]="product.idProducto"
+            readonly
+            required
+          />
         </div>
 
         <div class="form-group">
-          <label for="password">Precio Unitario</label>
-          <input class="form-control" id="validationCustom02" placeholder="Precio Unitario" 
-                formControlName="precioUnitario" type="text" name="lname" required>
+          <label for="nombre">Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nombre"
+            name="nombre"
+            [(ngModel)]="product.nombreProducto"
+            required
+          />
         </div>
 
         <div class="form-group">
-          <label for="password">Nit Producto</label>
-          <input class="form-control" id="validationCustom03" placeholder="NIT Producto" 
-                formControlName="nitProducto" type="text" name="lname" required>
+          <label for="precio">Precio</label>
+          <input
+            type="number"
+            class="form-control"
+            id="precio"
+            name="precio"
+            [(ngModel)]="product.precioUnitario"
+            required
+          />
         </div>
 
         <div class="form-group">
-          <label for="password">Proveedor</label>
-          <input class="form-control" id="validationCustom04" placeholder="Proveedor" 
-                formControlName="proveedor" type="text" name="lname" required>
+          <label for="nitProducto">nitProducto</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nitProducto"
+            name="nitProducto"
+            [(ngModel)]="product.nitProducto"
+            required
+          />
         </div>
-        <br>
 
         <div class="form-group">
-          <button class="btn btn-outline-success btn-block">
-            <i class="fas fa-sign-in-alt"></i> Registrar
-          </button>
+          <label for="proveedor">Proveedor del producto</label>
+          <input
+            type="text"
+            class="form-control"
+            id="provedor"
+            name="proveedor"
+            [(ngModel)]="product.proveedor"
+            required
+          />
         </div>
+
+        <br/>
+        
+        <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">
+          <i class="fas fa-pencil-alt"></i> Actualizar
+        </button>
+        <button class="btn btn-outline-primary btn-block" routerLink="/product/inquire">
+          <i class="fas fa-arrow-alt-circle-left"></i> Volver
+        </button>
+        
       </form>
-    </div>    
-  </div>    
+    </div>
+  </div>
 </div>
-<ng-template  #loggedOut></ng-template>

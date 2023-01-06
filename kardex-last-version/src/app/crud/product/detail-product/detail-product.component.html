@@ -1,0 +1,23 @@
+<app-menu></app-menu>
+<div class="container">
+  <div class="row mt-5" *ngIf="product">
+    <div class="col-md-4 mx-auto">
+        <div class="card" style="width: 18rem;">
+            <div class="card-header text-center">
+              Detalle
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><b>ID: </b>{{product.idProducto}}</li>
+              <li class="list-group-item"><b>Nombre del producto: </b>{{product.nombreProducto}}</li>
+              <li class="list-group-item"><b>Precio Unitario: </b>{{product.precioUnitario}}€</li>
+              <li class="list-group-item"><b>Nit del Producto: </b>{{product.nitProducto}}</li>
+              <li class="list-group-item"><b>Proveedor: </b>{{product.proveedor}}</li>
+            </ul>
+            <div class="card-footer">
+                <button class="btn btn-outline-primary btn-block" (click)="volver()"><i class="fas fa-arrow-alt-circle-left"></i> Volver</button>
+            </div>
+          </div>
+          
+    </div>
+</div>
+</div>

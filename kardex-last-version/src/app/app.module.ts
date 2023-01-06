@@ -1,3 +1,4 @@
+
 import { ListProductComponent } from './crud/product/list-product/list-product.component';
 import { DeleteProductComponent } from './crud/product/delete-product/delete-product.component';
 import { EditProductComponent } from './crud/product/edit-product/edit-product.component';
@@ -21,6 +22,7 @@ import { IndexComponent } from './index/index.component';
 import { MenuComponent } from './navigation/menu.component';
 import { RegistroComponent } from './auth/registro.component';
 import { NewProductComponent } from './crud/product/new-product/new-product.component';
+import { DetailProductComponent } from './crud/product/detail-product/detail-product.component';
 
 
 @NgModule({
@@ -34,7 +36,8 @@ import { NewProductComponent } from './crud/product/new-product/new-product.comp
     MenuProductComponent,
     EditProductComponent,
     DeleteProductComponent,
-    ListProductComponent
+    ListProductComponent,
+    DetailProductComponent
   ],
   imports: [
     FormsModule,

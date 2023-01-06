@@ -58,7 +58,7 @@ export class NewProductComponent implements OnInit {
           timeOut: 3000, positionClass: 'toast-top-center'
         });
         this.onCleanForm();
-        this.router.navigate(['/product']);
+        this.router.navigate(['/product/inquire']);
       },
       err => {
         this.errorMsj = err.error.mensaje;

@@ -9,13 +9,13 @@ import { Observable } from 'rxjs';
 })
 export class ProductService {
 
-  productURL = `http://localhost:8080/api/producto`;
+  productURL = `http://localhost:8080/api/producto/`;
 
   constructor(private httpClient: HttpClient) { }
 
   //Retornar una lista de productos
   public lista(): Observable<Product[]> {
-    return this.httpClient.get<Product[]>(this.productURL + 'lista');
+    return this.httpClient.get<Product[]>(this.productURL + `list`);
   }
 
   //Retornar las característica de un producto a partir de su id
@@ -30,7 +30,7 @@ export class ProductService {
 
   //Crear un producto
   public save(product: Product): Observable<any> {
-    return this.httpClient.post<any>(this.productURL, product);
+    return this.httpClient.post<any>(this.productURL+`create`, product);
   }
 
   //Actualizar un producto

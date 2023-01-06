@@ -5,12 +5,12 @@ import { Product } from 'src/app/models/crud/product';
 import { ProductService } from 'src/app/service/product.service';
 
 @Component({
-  selector: 'app-delete-product',
-  templateUrl: './delete-product.component.html',
-  styleUrls: ['./delete-product.component.scss']
+  selector: 'app-detail-product',
+  templateUrl: './detail-product.component.html',
+  styleUrls: ['./detail-product.component.scss']
 })
-export class DeleteProductComponent implements OnInit {
-  product!: Product;
+export class DetailProductComponent implements OnInit{
+  product: Product | null = null;
 
   constructor(
     private productoService: ProductService,
@@ -24,32 +24,18 @@ export class DeleteProductComponent implements OnInit {
     this.productoService.detail(id).subscribe(
       data => {
         this.product = data;
-        console.log(this.product);
       },
       err => {
         this.toastr.error(err.error.mensaje, 'Fail', {
           timeOut: 3000,  positionClass: 'toast-top-center',
         });
-        this.router.navigate(['/']);
+        this.volver();
       }
     );
   }
 
-  public onDelete(id:number):void{
-    this.productoService.delete(id).subscribe(
-      data => {
-        this.toastr.success('Producto Eliminado', 'OK', {
-          timeOut: 3000, positionClass: 'toast-top-center'
-        });
-        this.router.navigate(['/product/inquire']);
-      },
-      err => {
-        this.toastr.error(err.error.mensaje, 'Fail', {
-          timeOut: 3000, positionClass: 'toast-top-center',
-        });
-      }
-    );
-
+  volver(): void {
+    this.router.navigate(['/product/menu']);
   }
 
 

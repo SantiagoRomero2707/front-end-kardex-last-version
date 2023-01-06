@@ -1,5 +1,5 @@
 export class Product{
-    id?:number;
+    idProducto!:number;
     nombreProducto!: string;
     precioUnitario!: number;
     nitProducto!: string;

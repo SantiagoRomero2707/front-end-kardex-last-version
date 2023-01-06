@@ -1,3 +1,4 @@
+import { DetailProductComponent } from './crud/product/detail-product/detail-product.component';
 import { ListProductComponent } from './crud/product/list-product/list-product.component';
 import { DeleteProductComponent } from './crud/product/delete-product/delete-product.component';
 import { EditProductComponent } from './crud/product/edit-product/edit-product.component';
@@ -19,10 +20,11 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegistroComponent},
   {path: 'product/menu', component: MenuProductComponent, canActivate: [guard], data: { expectedRol: ['admin', 'user'] }},
-  {path: 'product/edit', component: EditProductComponent, canActivate: [guard], data: { expectedRol: ['admin', 'user'] }},
-  {path: 'product/delete', component: DeleteProductComponent, canActivate: [guard], data: { expectedRol: ['admin', 'user'] }},
+  {path: 'product/inquire/update/:id', component: EditProductComponent, canActivate: [guard], data: { expectedRol: ['admin', 'user'] }},
+  {path: 'product/inquire/delete/:id', component: DeleteProductComponent, canActivate: [guard], data: { expectedRol: ['admin', 'user'] }},
   {path: 'product/new', component: NewProductComponent, canActivate: [guard], data: { expectedRol: ['admin', 'user'] }},
   {path: 'product/inquire', component: ListProductComponent, canActivate: [guard], data: { expectedRol: ['admin', 'user'] }},
+  {path: 'product/inquire/detail/:id', component: DetailProductComponent, canActivate: [guard], data: { expectedRol: ['admin', 'user'] }}
   
 ];
 

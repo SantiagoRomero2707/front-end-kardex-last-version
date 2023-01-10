@@ -1,0 +1,81 @@
+<app-menu></app-menu>
+<h2>TARJETA KARDEX</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Artículo</th>
+            <th>Referencia</th>
+            <th>Localización</th>
+            <th>Proveedor</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>name articulo</td>
+            <td>name referencia</td>
+            <td>name localización</td>
+            <td>name proveedor</td>
+        </tr>
+    </tbody>
+</table>
+<table>
+    <thead>
+        <tr>
+            <th>Entrada Máxima</th>
+            <th>Entrada Mínima</th>
+            <th>Método</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>name articulo</td>
+            <td>name referencia</td>
+            <td>name localización</td>
+        </tr>
+    </tbody>
+</table>
+
+<br>
+<table class="table table-bordered border-primary">
+    <thead class="table-light">
+        <tr>
+            <th scope="col" rowspan="2">id</th>
+            <th scope="col" rowspan="2">Fecha</th>
+            <th scope="col" colspan="2">DETALLE</th>
+            <th scope="col" colspan="3">ENTRADAS</th>
+            <th scope="col" colspan="3">SALIDAS</th>
+            <th scope="col" colspan="3">SALDOS</th>
+        </tr>
+        <tr>
+            <th scope="col">concepto</th>
+            <th scope="col">doc</th>
+            <th scope="col">cantidad entradas</th>
+            <th scope="col">valor unitario</th>
+            <th scope="col">valor total</th>
+            <th scope="col">cantidad salidas</th>
+            <th scope="col">valor unitario</th>
+            <th scope="col">valor total</th>
+            <th scope="col">saldos cantidad</th>
+            <th scope="col">valor unitario</th>
+            <th scope="col">valor total</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let kardex of listKardex">
+            <td scope="row">{{kardex.idKardex}}</td>
+            <td scope="row">{{kardex.fkIdMovimiento}}</td>
+            <td scope="row">Un concepto</td>
+            <td scope="row">Un doc</td>
+            <td scope="row">{{kardex.cantidadEntrada}}</td>
+            <td scope="row">{{kardex.valorUnitarioEntrada}}</td>
+            <td scope="row">{{kardex.valorTotalEntrada}}</td>
+            <td scope="row">{{kardex.cantidadSalida}}</td>
+            <td scope="row">{{kardex.valorUnitarioSalida}}</td>
+            <td scope="row">{{kardex.valorTotalSalida}}</td>
+            <td scope="row">{{kardex.cantidadSaldos}}</td>
+            <td scope="row">{{kardex.valorUnitarioSaldos}}</td>
+            <td scope="row">{{kardex.valorTotalSaldos}}</td>
+        </tr>
+
+    </tbody>
+</table>

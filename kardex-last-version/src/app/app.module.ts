@@ -1,3 +1,4 @@
+import { ReportKardexComponent } from './reports/report-kardex/report-kardex.component';
 import { NewKardexComponent } from './crud/kardex/new-kardex/new-kardex.component';
 
 import { ListProductComponent } from './crud/product/list-product/list-product.component';
@@ -50,6 +51,7 @@ import { DetailKardexComponent } from './crud/kardex/detail-kardex/detail-kardex
     DeleteKardexComponent,
     ListKardexComponent,
     DetailKardexComponent,
+    ReportKardexComponent
   ],
   imports: [
     FormsModule,

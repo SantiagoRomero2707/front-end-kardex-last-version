@@ -1,3 +1,4 @@
+import { ReportKardexComponent } from './reports/report-kardex/report-kardex.component';
 import { DetailKardexComponent } from './crud/kardex/detail-kardex/detail-kardex.component';
 import { DeleteKardexComponent } from './crud/kardex/delete-kardex/delete-kardex.component';
 import { EditKardexComponent } from './crud/kardex/edit-kardex/edit-kardex.component';
@@ -36,7 +37,8 @@ const routes: Routes = [
   {path: 'kardex/inquire', component: ListKardexComponent, canActivate: [guard], data: { expectedRol: ["ADMIN","USER"] }},
   {path: 'kardex/inquire/update/:id', component: EditKardexComponent, canActivate: [guard], data: { expectedRol: ["ADMIN"] }},
   {path: 'kardex/inquire/delete/:id', component: DeleteKardexComponent, canActivate: [guard], data: { expectedRol: ["ADMIN"] }},
-  {path: 'kardex/inquire/detail/:id', component: DetailKardexComponent, canActivate: [guard], data: { expectedRol: ["ADMIN","USER"] }}
+  {path: 'kardex/inquire/detail/:id', component: DetailKardexComponent, canActivate: [guard], data: { expectedRol: ["ADMIN","USER"] }},
+  {path: 'kardex/report', component: ReportKardexComponent, canActivate: [guard], data: { expectedRol: ["ADMIN","USER"] }}
 ];
 
 @NgModule({

@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   isLogged = false;
   isLoginFail = false;
   loginUsuario!: LoginUsuario;
-  nombreUsuario! : string;
+  email! : string;
   password! : string;
   roles: string[] = [];
   errorMsj!: string;
@@ -39,16 +39,16 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(): void {
-    this.loginUsuario = new LoginUsuario(this.nombreUsuario, this.password);
+    this.loginUsuario = new LoginUsuario(this.email, this.password);
     this.authService.login(this.loginUsuario).subscribe(
       data => {
         this.isLogged = true;
 
         this.tokenService.setToken(data.token);
-        this.tokenService.setUserName(data.nombreUsuario);
+        this.tokenService.setUserName(data.firstname+" "+data.lastname);
         this.tokenService.setAuthorities(data.authorities);
         this.roles = data.authorities;
-        this.toastr.success('Bienvenido ' + data.nombreUsuario, 'Ingreso correcto ', {
+        this.toastr.success('Bienvenido ' + data.firstname +" "+data.lastname, 'Ingreso correcto ', {
           timeOut: 3000, positionClass: 'toast-top-center'
         });
         this.router.navigate(['/']);

@@ -19,13 +19,12 @@ const routes: Routes = [
   {path: '', component: IndexComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegistroComponent},
-  {path: 'product/menu', component: MenuProductComponent, canActivate: [guard], data: { expectedRol: ['admin', 'user'] }},
-  {path: 'product/inquire/update/:id', component: EditProductComponent, canActivate: [guard], data: { expectedRol: ['admin', 'user'] }},
-  {path: 'product/inquire/delete/:id', component: DeleteProductComponent, canActivate: [guard], data: { expectedRol: ['admin', 'user'] }},
-  {path: 'product/new', component: NewProductComponent, canActivate: [guard], data: { expectedRol: ['admin', 'user'] }},
-  {path: 'product/inquire', component: ListProductComponent, canActivate: [guard], data: { expectedRol: ['admin', 'user'] }},
-  {path: 'product/inquire/detail/:id', component: DetailProductComponent, canActivate: [guard], data: { expectedRol: ['admin', 'user'] }}
-  
+  {path: 'product/new', component: NewProductComponent, canActivate: [guard], data: { expectedRol: ["ADMIN","USER"] }},
+  {path: 'product/menu', component: MenuProductComponent, canActivate: [guard], data: { expectedRol: ["ADMIN","USER"] }},
+  {path: 'product/inquire', component: ListProductComponent, canActivate: [guard], data: { expectedRol: ["ADMIN","USER"] }},
+  {path: 'product/inquire/update/:id', component: EditProductComponent, canActivate: [guard], data: { expectedRol: ["ADMIN"] }},
+  {path: 'product/inquire/delete/:id', component: DeleteProductComponent, canActivate: [guard], data: { expectedRol: ["ADMIN"] }},
+  {path: 'product/inquire/detail/:id', component: DetailProductComponent, canActivate: [guard], data: { expectedRol: ["ADMIN","USER"] }}
 ];
 
 @NgModule({

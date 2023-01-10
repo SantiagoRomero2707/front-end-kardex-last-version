@@ -13,8 +13,8 @@ import { NuevoUsuario } from '../models/auth/nuevo-usuario';
 })
 export class RegistroComponent implements OnInit {
   nuevoUsuario!: NuevoUsuario;
-  nombre!: string;
-  nombreUsuario!: string;
+  firstname!: string;
+  lastname!: string;
   email!: string;
   password!: string;
   errMsj!: string;
@@ -34,7 +34,7 @@ export class RegistroComponent implements OnInit {
   }
 
   onRegister(): void{
-    this.nuevoUsuario = new NuevoUsuario(this.nombre, this.nombreUsuario, this.email, this.password);
+    this.nuevoUsuario = new NuevoUsuario(this.firstname, this.lastname, this.email, this.password);
     this.authService.nuevo(this.nuevoUsuario).subscribe(
       data => {
         this.toastr.success('Cuenta creada', 'OK',{

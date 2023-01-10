@@ -1,4 +1,4 @@
-import { TokenService } from '../service/token.service';
+import { TokenService } from '../service/auth/token.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

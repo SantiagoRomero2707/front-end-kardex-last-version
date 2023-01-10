@@ -1,3 +1,9 @@
+import { DetailKardexComponent } from './crud/kardex/detail-kardex/detail-kardex.component';
+import { DeleteKardexComponent } from './crud/kardex/delete-kardex/delete-kardex.component';
+import { EditKardexComponent } from './crud/kardex/edit-kardex/edit-kardex.component';
+import { ListKardexComponent } from './crud/kardex/list-kardex/list-kardex.component';
+import { MenuKardexComponent } from './crud/kardex/menu-kardex/menu-kardex.component';
+import { NewKardexComponent } from './crud/kardex/new-kardex/new-kardex.component';
 import { DetailProductComponent } from './crud/product/detail-product/detail-product.component';
 import { ListProductComponent } from './crud/product/list-product/list-product.component';
 import { DeleteProductComponent } from './crud/product/delete-product/delete-product.component';
@@ -24,7 +30,13 @@ const routes: Routes = [
   {path: 'product/inquire', component: ListProductComponent, canActivate: [guard], data: { expectedRol: ["ADMIN","USER"] }},
   {path: 'product/inquire/update/:id', component: EditProductComponent, canActivate: [guard], data: { expectedRol: ["ADMIN"] }},
   {path: 'product/inquire/delete/:id', component: DeleteProductComponent, canActivate: [guard], data: { expectedRol: ["ADMIN"] }},
-  {path: 'product/inquire/detail/:id', component: DetailProductComponent, canActivate: [guard], data: { expectedRol: ["ADMIN","USER"] }}
+  {path: 'product/inquire/detail/:id', component: DetailProductComponent, canActivate: [guard], data: { expectedRol: ["ADMIN","USER"] }},
+  {path: 'kardex/new', component: NewKardexComponent, canActivate: [guard], data: { expectedRol: ["ADMIN","USER"] }},
+  {path: 'kardex/menu', component: MenuKardexComponent, canActivate: [guard], data: { expectedRol: ["ADMIN","USER"] }},
+  {path: 'kardex/inquire', component: ListKardexComponent, canActivate: [guard], data: { expectedRol: ["ADMIN","USER"] }},
+  {path: 'kardex/inquire/update/:id', component: EditKardexComponent, canActivate: [guard], data: { expectedRol: ["ADMIN"] }},
+  {path: 'kardex/inquire/delete/:id', component: DeleteKardexComponent, canActivate: [guard], data: { expectedRol: ["ADMIN"] }},
+  {path: 'kardex/inquire/detail/:id', component: DetailKardexComponent, canActivate: [guard], data: { expectedRol: ["ADMIN","USER"] }}
 ];
 
 @NgModule({

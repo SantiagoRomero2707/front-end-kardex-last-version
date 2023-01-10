@@ -1,19 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { KardexService } from './../../../service/models/kardex.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Kardex } from './../../../models/crud/kardex';
+import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
-import { Product } from 'src/app/models/crud/product';
-import { ProductService } from 'src/app/service/models/product.service';
 
 @Component({
   selector: 'app-detail-product',
-  templateUrl: './detail-product.component.html',
-  styleUrls: ['./detail-product.component.scss']
+  templateUrl: './detail-kardex.component.html',
+  styleUrls: ['./detail-kardex.component.scss']
 })
-export class DetailProductComponent implements OnInit{
-  product: Product | null = null;
+export class DetailKardexComponent implements OnInit{
+  kardex: Kardex | null = null;
 
   constructor(
-    private productoService: ProductService,
+    private kardexService: KardexService,
     private activatedRoute: ActivatedRoute,
     private toastr: ToastrService,
     private router: Router
@@ -21,9 +21,9 @@ export class DetailProductComponent implements OnInit{
 
   ngOnInit() {
     const id = this.activatedRoute.snapshot.params['id'];
-    this.productoService.detail(id).subscribe(
+    this.kardexService.detail(id).subscribe(
       data => {
-        this.product = data;
+        this.kardex = data;
       },
       err => {
         this.toastr.error(err.error.mensaje, 'Fail', {

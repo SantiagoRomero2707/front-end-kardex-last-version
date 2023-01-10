@@ -1,0 +1,89 @@
+<app-menu></app-menu>
+<div>
+    <h2>¿Seguro desea eliminar el siguiente producto con los siguientes datos?</h2>
+</div>
+<div class="container" *ngIf="kardex">
+  <div class="row mt-5">
+    <div class="col-md-4 mx-auto">
+
+      <form (ngSubmit)="onDelete(kardex.idKardex)" novalidate #f="ngForm">
+
+        <div class="form-group">
+          <label for="idProducto">Id producto</label>
+          <input
+            type="number"
+            class="form-control"
+            id="idProducto"
+            name="idProducto"
+            [(ngModel)]="kardex.idKardex"
+            readonly
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nombre"
+            name="nombre"
+            [(ngModel)]="kardex.cantidadEntrada"
+            readonly
+            required
+          />
+        </div>
+        <!--
+        <div class="form-group">
+          <label for="precio">Precio</label>
+          <input
+            type="number"
+            class="form-control"
+            id="precio"
+            name="precio"
+            [(ngModel)]="kardex.precioUnitario"
+            readonly
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="nitProducto">nitProducto</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nitProducto"
+            name="nitProducto"
+            [(ngModel)]="product.nitProducto"
+            readonly
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="proveedor">Proveedor del producto</label>
+          <input
+            type="text"
+            class="form-control"
+            id="provedor"
+            name="proveedor"
+            [(ngModel)]="product.proveedor"
+            readonly
+            required
+          />
+        </div>-->
+
+        <br/>
+        
+        <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">
+          <i class="far fa-trash-alt"></i> Borrar
+        </button>
+        <button class="btn btn-outline-primary btn-block" routerLink="/lista">
+          <i class="fas fa-arrow-alt-circle-left"></i> Volver
+        </button>
+        
+      </form>
+    </div>
+  </div>
+</div>
+

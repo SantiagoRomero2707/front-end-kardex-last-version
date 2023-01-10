@@ -1,19 +1,20 @@
+import { Kardex } from './../../../models/crud/kardex';
+import { KardexService } from './../../../service/models/kardex.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Product } from 'src/app/models/crud/product';
-import { ProductService } from 'src/app/service/models/product.service';
 
 @Component({
   selector: 'app-delete-product',
-  templateUrl: './delete-product.component.html',
-  styleUrls: ['./delete-product.component.scss']
+  templateUrl: './delete-kardex.component.html',
+  styleUrls: ['./delete-kardex.component.scss']
 })
-export class DeleteProductComponent implements OnInit {
-  product!: Product;
+export class DeleteKardexComponent implements OnInit {
+  kardex!: Kardex;
 
   constructor(
-    private productoService: ProductService,
+    private kardexService: KardexService,
     private activatedRoute: ActivatedRoute,
     private toastr: ToastrService,
     private router: Router
@@ -21,10 +22,10 @@ export class DeleteProductComponent implements OnInit {
 
   ngOnInit() {
     const id = this.activatedRoute.snapshot.params['id'];
-    this.productoService.detail(id).subscribe(
+    this.kardexService.detail(id).subscribe(
       data => {
-        this.product = data;
-        console.log(this.product);
+        this.kardex = data;
+        console.log(this.kardex);
       },
       err => {
         this.toastr.error(err.error.mensaje, 'Fail', {
@@ -36,7 +37,7 @@ export class DeleteProductComponent implements OnInit {
   }
 
   public onDelete(id:number):void{
-    this.productoService.delete(id).subscribe(
+    this.kardexService.delete(id).subscribe(
       data => {
         this.toastr.success('Producto Eliminado', 'OK', {
           timeOut: 3000, positionClass: 'toast-top-center'

@@ -1,0 +1,51 @@
+<app-menu></app-menu>
+<ul>
+    <li>
+        <form #f="ngForm" (ngSubmit)="onRegistrarKardex()" novalidate>
+            <button class="btn btn-outline-success btn-block">
+                <i class="fa-solid fa-calculator"></i> Registrar Kardex
+            </button>
+        </form>
+        <br>
+    </li>
+    <li>
+        <form #f="ngForm" (ngSubmit)="onEditarKardex()" novalidate>
+            <button class="btn btn-outline-success btn-block">
+                <i class="fa-solid fa-calculator"></i> Editar Kardex
+            </button>
+        </form>
+        <br>
+    </li>
+    <li>
+        <form #f="ngForm" (ngSubmit)="onEliminarKardex()" novalidate>
+            <button class="btn btn-outline-success btn-block">
+                <i class="fa-solid fa-calculator"></i> Eliminar Kardex
+            </button>
+        </form>
+        <br>
+    </li>
+    <li>
+        <br>
+        <label>Consulta de Kardex</label>
+        <br>
+        <ul>
+            <li>
+                <form #f="ngForm" (ngSubmit)="onConsultarKardexs()" novalidate>
+                    <button class="btn btn-outline-success btn-block">
+                        <i class="fa-solid fa-calculator"></i> Consultar lista de todos los kardex
+                    </button>
+                </form>
+                <br>
+            </li>
+            <li>
+                <form #f="ngForm" (ngSubmit)="onConsultarKardex()" novalidate>
+                    <button class="btn btn-outline-success btn-block">
+                        <i class="fa-solid fa-calculator"></i> Consultar un Kardex
+                    </button>
+                </form>
+                <br>
+            </li>
+            
+        </ul>  
+    </li>
+</ul>

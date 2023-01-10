@@ -1,3 +1,4 @@
+import { NewKardexComponent } from './crud/kardex/new-kardex/new-kardex.component';
 
 import { ListProductComponent } from './crud/product/list-product/list-product.component';
 import { DeleteProductComponent } from './crud/product/delete-product/delete-product.component';
@@ -23,6 +24,11 @@ import { MenuComponent } from './navigation/menu.component';
 import { RegistroComponent } from './auth/registro.component';
 import { NewProductComponent } from './crud/product/new-product/new-product.component';
 import { DetailProductComponent } from './crud/product/detail-product/detail-product.component';
+import { MenuKardexComponent } from './crud/kardex/menu-kardex/menu-kardex.component';
+import { EditKardexComponent } from './crud/kardex/edit-kardex/edit-kardex.component';
+import { DeleteKardexComponent } from './crud/kardex/delete-kardex/delete-kardex.component';
+import { ListKardexComponent } from './crud/kardex/list-kardex/list-kardex.component';
+import { DetailKardexComponent } from './crud/kardex/detail-kardex/detail-kardex.component';
 
 
 @NgModule({
@@ -37,7 +43,13 @@ import { DetailProductComponent } from './crud/product/detail-product/detail-pro
     EditProductComponent,
     DeleteProductComponent,
     ListProductComponent,
-    DetailProductComponent
+    DetailProductComponent,
+    NewKardexComponent,
+    MenuKardexComponent,
+    EditKardexComponent,
+    DeleteKardexComponent,
+    ListKardexComponent,
+    DetailKardexComponent,
   ],
   imports: [
     FormsModule,

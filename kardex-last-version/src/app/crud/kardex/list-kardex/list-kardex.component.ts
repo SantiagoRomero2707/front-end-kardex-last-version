@@ -1,21 +1,21 @@
-import { Product } from 'src/app/models/crud/product';
+import { Kardex } from './../../../models/crud/kardex';
 import { Component } from '@angular/core';
-import { ProductService } from 'src/app/service/models/product.service';
 import { TokenService } from 'src/app/service/auth/token.service';
 import { ToastrService } from 'ngx-toastr';
+import { KardexService } from 'src/app/service/models/kardex.service';
 
 @Component({
   selector: 'app-list-product',
-  templateUrl: './list-product.component.html',
-  styleUrls: ['./list-product.component.scss']
+  templateUrl: './list-kardex.component.html',
+  styleUrls: ['./list-kardex.component.scss']
 })
-export class ListProductComponent {
-  products: Product[] = [];
+export class ListKardexComponent {
+  listKardex: Kardex[] = [];
   roles!: string[];
   isAdmin = false;
 
   constructor(
-    private productoService: ProductService,
+    private kardexService: KardexService,
     private toastr: ToastrService,
     private tokenService: TokenService
   ) { }
@@ -28,16 +28,17 @@ export class ListProductComponent {
   }
 
   cargarProductos(): void {
-    this.productoService.lista().forEach(
+    this.kardexService.lista().forEach(
       data => {
-        this.products = data;
+        this.listKardex = data;
+        console.log(this.listKardex);
       }
     );
   }
 
   borrar(id: any) {
     const finalId = parseInt(id);
-    this.productoService.delete(finalId).subscribe(
+    this.kardexService.delete(finalId).subscribe(
       data => {
         this.toastr.success('Producto Eliminado', 'OK', {
           timeOut: 3000, positionClass: 'toast-top-center'

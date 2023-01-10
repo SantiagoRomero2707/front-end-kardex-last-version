@@ -1,3 +1,5 @@
+import { Kardex } from './../../../models/crud/kardex';
+import { KardexService } from './../../../service/models/kardex.service';
 import { ProductService } from 'src/app/service/models/product.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/models/crud/product';
@@ -7,15 +9,15 @@ import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-edit-product',
-  templateUrl: './edit-product.component.html',
-  styleUrls: ['./edit-product.component.scss']
+  templateUrl: './edit-kardex.component.html',
+  styleUrls: ['./edit-kardex.component.scss']
 })
 
-export class EditProductComponent implements OnInit{
-  product!: Product;
+export class EditKardexComponent implements OnInit{
+  kardex!: Kardex;
 
   constructor(
-    private productoService: ProductService,
+    private kardexService: KardexService,
     private activatedRoute: ActivatedRoute,
     private toastr: ToastrService,
     private router: Router
@@ -23,10 +25,10 @@ export class EditProductComponent implements OnInit{
 
   ngOnInit() {
     const id = this.activatedRoute.snapshot.params['id'];
-    this.productoService.detail(id).subscribe(
+    this.kardexService.detail(id).subscribe(
       data => {
-        this.product = data;
-        console.log(this.product);
+        this.kardex= data;
+        console.log(this.kardex);
       },
       err => {
         this.toastr.error(err.error.mensaje, 'Fail', {
@@ -39,7 +41,7 @@ export class EditProductComponent implements OnInit{
 
   onUpdate(): void {
     const id = this.activatedRoute.snapshot.params['id'];
-    this.productoService.update(id, this.product).subscribe(
+    this.kardexService.update(id, this.kardex).subscribe(
       data => {
         this.toastr.success('Producto Actualizado', 'OK', {
           timeOut: 3000, positionClass: 'toast-top-center'

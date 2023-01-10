@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { TokenService } from '../service/token.service';
+import { TokenService } from '../service/auth/token.service';
 
 @Component({
   selector: 'app-index',
@@ -26,7 +26,7 @@ export class IndexComponent implements OnInit {
   }
 
   onKardex(): void{
-    this.router.navigate(['/register']);
+    this.router.navigate(['/kardex/menu']);
   }
 
   onProduct(): void{

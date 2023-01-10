@@ -1,10 +1,10 @@
-import { ProductService } from 'src/app/service/product.service';
+import { ProductService } from 'src/app/service/models/product.service';
 import { Product } from './../../../models/crud/product';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
-import { TokenService } from 'src/app/service/token.service';
+import { TokenService } from 'src/app/service/auth/token.service';
 
 
 @Component({

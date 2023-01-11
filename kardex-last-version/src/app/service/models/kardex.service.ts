@@ -1,4 +1,4 @@
-import { Kardex } from './../../models/crud/kardex';
+import { Kardex } from '../../models/crud/kardex';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';

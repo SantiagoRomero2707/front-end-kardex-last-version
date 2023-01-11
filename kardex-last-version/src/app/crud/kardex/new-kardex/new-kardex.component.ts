@@ -1,11 +1,11 @@
-import { Kardex } from './../../../models/crud/kardex';
 import { KardexService } from './../../../service/models/kardex.service';
-import { Product } from '../../../models/crud/product';
+import { TokenService } from 'src/app/service/auth/token.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { Kardex } from '../../../models/crud/kardex';
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
-import { TokenService } from 'src/app/service/auth/token.service';
+
 
 
 @Component({

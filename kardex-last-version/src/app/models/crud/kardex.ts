@@ -43,7 +43,4 @@ export class Kardex{
         this.fkIdProducto = fkIdProducto;
         this.fkIdUser = fkIdUser
     }
-    
-    
-
 }

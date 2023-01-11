@@ -1,13 +1,12 @@
-
 import { MovementService } from '../../service/models/movement.service';
-import { TipoMovimiento } from 'src/app/models/crud/tipoMovimiento';
 import { Component } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
-import { Kardex } from 'src/app/models/crud/kardex';
-import { Product } from 'src/app/models/crud/product';
 import { TokenService } from 'src/app/service/auth/token.service';
 import { KardexService } from 'src/app/service/models/kardex.service';
 import { ProductService } from 'src/app/service/models/product.service';
+import { Kardex } from 'src/app/models/crud/kardex';
+import { Product } from 'src/app/models/crud/product';
+import { TipoMovimiento } from 'src/app/models/crud/tipoMovimiento';
 
 @Component({
   selector: 'app-report-kardex',

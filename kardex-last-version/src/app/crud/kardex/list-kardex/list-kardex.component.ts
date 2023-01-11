@@ -1,4 +1,4 @@
-import { Kardex } from './../../../models/crud/kardex';
+import { Kardex } from '../../../models/crud/kardex';
 import { Component } from '@angular/core';
 import { TokenService } from 'src/app/service/auth/token.service';
 import { ToastrService } from 'ngx-toastr';

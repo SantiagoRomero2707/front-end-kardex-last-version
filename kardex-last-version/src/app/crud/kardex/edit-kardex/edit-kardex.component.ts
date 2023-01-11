@@ -1,8 +1,8 @@
-import { Kardex } from './../../../models/crud/kardex';
+import { Kardex } from '../../../models/crud/kardex';
 import { KardexService } from './../../../service/models/kardex.service';
 import { ProductService } from 'src/app/service/models/product.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Product } from 'src/app/models/crud/product';
+import { Product } from 'src/app/models/crud/impl/product';
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 

@@ -1,4 +1,4 @@
-import { Product } from 'src/app/models/crud/product';
+import { Product } from 'src/app/models/crud/impl/product';
 import { Component } from '@angular/core';
 import { ProductService } from 'src/app/service/models/product.service';
 import { TokenService } from 'src/app/service/auth/token.service';

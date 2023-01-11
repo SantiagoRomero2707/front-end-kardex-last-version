@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Product } from '../../models/crud/product';
+import { Product } from '../../models/crud/impl/product';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 

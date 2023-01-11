@@ -1,5 +1,5 @@
 import { ProductService } from 'src/app/service/models/product.service';
-import { Product } from './../../../models/crud/product';
+import { Product } from '../../../models/crud/impl/product';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';

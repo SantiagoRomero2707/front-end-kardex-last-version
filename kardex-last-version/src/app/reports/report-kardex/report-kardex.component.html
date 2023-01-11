@@ -47,8 +47,7 @@
             <th scope="col" colspan="3">SALDOS</th>
         </tr>
         <tr>
-            <th scope="col">concepto</th>
-            <th scope="col">doc</th>
+            <th scope="col">Descripción</th>
             <th scope="col">cantidad entradas</th>
             <th scope="col">valor unitario</th>
             <th scope="col">valor total</th>
@@ -63,9 +62,9 @@
     <tbody>
         <tr *ngFor="let kardex of listKardex">
             <td scope="row">{{kardex.idKardex}}</td>
-            <td scope="row">{{kardex.fkIdMovimiento}}</td>
-            <td scope="row">Un concepto</td>
-            <td scope="row">Un doc</td>
+            <td scope="row">{{movementKardex[0]['fechaMovimiento']}}</td>
+            <td scope="row">{{kardex['descripciónMovimiento']}}</td>
+
             <td scope="row">{{kardex.cantidadEntrada}}</td>
             <td scope="row">{{kardex.valorUnitarioEntrada}}</td>
             <td scope="row">{{kardex.valorTotalEntrada}}</td>

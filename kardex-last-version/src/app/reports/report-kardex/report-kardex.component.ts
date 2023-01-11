@@ -40,26 +40,20 @@ export class ReportKardexComponent {
     this.kardexService.lista().forEach(
       data => {
         this.listKardex = data;
-        //console.log(this.listKardex[0]['fkIdProducto'])
         this.productoService.detail(this.listKardex[0]['fkIdProducto']).forEach(
           data => {
             this.products.push(data);
-            
-            console.log(this.products[0].nombreProducto);
           }
         );
 
         this.movimientoService.detail(this.listKardex[0]['fkIdMovimiento']).forEach(
           data => {
             this.movementKardex.push(data);
-            console.log(this.movementKardex[0].fechaMovimiento);
           }
         );
 
       }
     );
-    
-
   }
 
   borrar(id: any) {
